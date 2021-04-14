@@ -41,7 +41,7 @@ class Animate:
 
     def __call__(self, j):
         # Perform motion (10 step, corresponds to 1 day)
-        self.system.motion(n_steps=10)
+        self.system.motion(10)
         self.time += 1
 
         # Update
