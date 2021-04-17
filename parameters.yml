@@ -1,0 +1,3 @@
+icon_paths: "icons/"
+zoom: {'sun': 0.1, 'earth': 0.01}
+id: {'sun': 0, 'mercury': 1, 'venus': 2, 'earth': 3, 'moon': 301}
