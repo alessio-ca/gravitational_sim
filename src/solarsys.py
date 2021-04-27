@@ -115,7 +115,8 @@ class System:
                 self.planets[i].f += force
                 self.planets[j].f -= force
 
-                self.U += energy
+                # Gravitational energy contributions are negative
+                self.U -= energy
 
         return self
 
@@ -148,3 +149,12 @@ class System:
         for _ in range(n_steps):
             self.integration()
         return self
+
+    def motion_dump(self, n_steps: int):
+        positions = np.zeros(shape=(n_steps, self.n, 3), dtype=np.float64)
+        for i in range(n_steps):
+            self.integration()
+            for j, planet in enumerate(self.planets):
+                positions[i, j, :] = planet.p
+
+        return positions
